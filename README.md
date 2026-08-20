@@ -56,7 +56,7 @@ For local form testing, create a `.dev.vars` file (already gitignored):
 
 ```
 RESEND_API_KEY=re_xxxxxxxxxxxx
-CONTACT_TO=jb@jbthepm.com
+CONTACT_TO=jbthepm@gmail.com
 CONTACT_FROM=website@jbthepm.com
 ```
 
@@ -89,7 +89,7 @@ retired, which is why this uses Resend instead.)
    | Name             | Value                        |
    |------------------|------------------------------|
    | `RESEND_API_KEY` | `re_...`                     |
-   | `CONTACT_TO`     | `jb@jbthepm.com`             |
+   | `CONTACT_TO`     | `jbthepm@gmail.com`             |
    | `CONTACT_FROM`   | `website@jbthepm.com`        |
 
 4. Redeploy.
@@ -105,7 +105,7 @@ Search the repo for `REPLACE-ME`:
 
 - [ ] Calendly URL — two places in `index.html` (hero button, contact section)
 - [ ] LinkedIn URL — footer in `index.html`
-- [ ] Confirm `jb@jbthepm.com` is the email you want (or change it everywhere)
+- [x] Contact email set to `jbthepm@gmail.com`
 - [ ] Set up Resend + the three environment variables above
 - [ ] Add `jbthepm.com` to Google Search Console and submit `sitemap.xml`
 

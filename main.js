@@ -152,7 +152,7 @@
           setStatus("Got it. I'll reply within one business day.", 'is-ok');
         })
         .catch(function (err) {
-          setStatus(err.message + ' You can also email jb@jbthepm.com directly.', 'is-error');
+          setStatus(err.message + ' You can also email jbthepm@gmail.com directly.', 'is-error');
         })
         .finally(function () { button.disabled = false; });
     });

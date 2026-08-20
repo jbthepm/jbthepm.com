@@ -15,7 +15,7 @@
  *        Pages > jbthepm > Settings > Environment variables
  *      Add (encrypted):
  *        RESEND_API_KEY  = re_xxxxxxxxxxxx
- *        CONTACT_TO      = jb@jbthepm.com        (where you want leads)
+ *        CONTACT_TO      = jbthepm@gmail.com        (where you want leads)
  *        CONTACT_FROM    = website@jbthepm.com   (must be on the verified domain)
  *   4. Redeploy.
  *
@@ -58,7 +58,7 @@ export async function onRequestPost(context) {
       return json({ error: 'The contact form is not connected yet.' }, 503);
     }
 
-    const to   = env.CONTACT_TO   || 'jb@jbthepm.com';
+    const to   = env.CONTACT_TO   || 'jbthepm@gmail.com';
     const from = env.CONTACT_FROM || 'website@jbthepm.com';
 
     const res = await fetch('https://api.resend.com/emails', {
