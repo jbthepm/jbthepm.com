@@ -11,3 +11,13 @@ Deployed to Cloudflare Pages. See README.md for stack and deploy details.
 4. Do not explain your reasoning or lay out options unless asked.
 
 Answer, then ask at most one question. Cut preamble, caveats, and background.
+
+## Cache-busting (important)
+
+`index.html` links `styles.css?v=N` and `main.js?v=N`. Cloudflare Pages pins
+static assets to a 4-hour browser cache and ignores any `Cache-Control` set in
+`_headers`, so the query string is the only thing that forces browsers to pick
+up changes.
+
+**Bump `N` in both tags whenever styles.css or main.js changes.** Skipping this
+ships new HTML against a stale stylesheet, which looks like broken CSS.

@@ -11,14 +11,10 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# styles.css and main.js are not content-hashed, so they must revalidate too.
-# Without this they sit in the browser cache for hours and pair new HTML with
-# stale CSS, which breaks the layout.
-/styles.css
-  Cache-Control: public, max-age=0, must-revalidate
-
-/main.js
-  Cache-Control: public, max-age=0, must-revalidate
+# NOTE: Cloudflare Pages ignores Cache-Control set here for static assets - it
+# pins them to max-age=14400 regardless. Everything else in this file does
+# apply. Cache-busting for styles.css and main.js is done with a ?v= query
+# string on the tags in index.html instead - bump it whenever either changes.
 
 # HTML should always revalidate so edits go live immediately.
 /

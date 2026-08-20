@@ -41,8 +41,10 @@ The site is launched and serving real traffic.
 - DoorCheck reframed as a national point solution, not Texas-only.
 - Skill pills rebuilt as a set of 10, synced into the `knowsAbout` schema.
 - Lucide icons on the four service cards.
-- `styles.css` and `main.js` now revalidate instead of caching for four hours.
-  The old setting paired fresh HTML with a stale stylesheet after a deploy.
+- Cache-busting for `styles.css` and `main.js` via a `?v=` query string. A
+  four-hour browser cache had been pairing fresh HTML with a stale stylesheet
+  after a deploy. Setting `Cache-Control` in `_headers` does not fix this;
+  Cloudflare Pages ignores it for static assets.
 
 ## To do
 
@@ -83,9 +85,12 @@ Each new page needs a `<url>` block added to `sitemap.xml`.
 
 ## Gotchas worth remembering
 
-- **Cache** — `styles.css` and `main.js` are not content-hashed. The cache
-  headers in `_headers` handle this now, but if a change ever looks like it did
-  not deploy, hard refresh (Ctrl+Shift+R) before assuming the code is wrong.
+- **Cache** - `styles.css` and `main.js` are not content-hashed, and Cloudflare
+  Pages ignores `Cache-Control` set in `_headers` for static assets, pinning
+  them to a 4-hour browser cache. Cache-busting is done with `?v=N` on the tags
+  in `index.html`; bump it whenever either file changes. If a change ever looks
+  like it did not deploy, hard refresh (Ctrl+Shift+R) before assuming the code
+  is wrong.
 - **Keep three things in sync** when the offering changes: the `#faq` section in
   `index.html`, the `FAQPage` JSON-LD at the bottom of the same file, and
   `llms.txt`.
