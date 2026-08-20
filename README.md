@@ -101,12 +101,12 @@ message rather than failing silently.
 
 ## TODO before launch
 
-Search the repo for `REPLACE-ME`:
+Launch checklist:
 
-- [ ] Calendly URL — two places in `index.html` (hero button, contact section)
-- [ ] LinkedIn URL — footer in `index.html`
+- [x] Calendly URL wired up
+- [x] LinkedIn URL wired up
 - [x] Contact email set to `jbthepm@gmail.com`
-- [ ] Set up Resend + the three environment variables above
+- [x] Resend + the three environment variables set up and tested
 - [ ] Add `jbthepm.com` to Google Search Console and submit `sitemap.xml`
 
 ---
