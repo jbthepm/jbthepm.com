@@ -163,7 +163,63 @@
     status.className = 'form__status ' + (cls || '');
   }
 
-  /* ---------- 7. Footer year ---------- */
+  /* ---------- 7. Slide-in menu (mobile) ----------
+     The sheet is a modal: it locks the page behind it, keeps Tab inside
+     itself, and closes on Escape, backdrop click, or any link tap. */
+  var menuToggle = document.querySelector(".menu-toggle");
+  var sheet      = document.getElementById("mobile-menu");
+  var backdrop   = document.querySelector(".sheet-backdrop");
+
+  if (menuToggle && sheet && backdrop) {
+    var openMenu = function () {
+      backdrop.hidden = false;
+      void backdrop.offsetWidth;          /* reflow so the fade actually runs */
+      sheet.classList.add("is-open");
+      backdrop.classList.add("is-open");
+      sheet.setAttribute("aria-hidden", "false");
+      menuToggle.setAttribute("aria-expanded", "true");
+      document.body.classList.add("menu-open");
+      var close = sheet.querySelector(".sheet__close");
+      if (close) close.focus();
+    };
+
+    /* restoreFocus is false when a link closed the menu — sending focus back
+       to the button would fight the anchor jump. */
+    var closeMenu = function (restoreFocus) {
+      sheet.classList.remove("is-open");
+      backdrop.classList.remove("is-open");
+      sheet.setAttribute("aria-hidden", "true");
+      menuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+      window.setTimeout(function () {
+        if (!sheet.classList.contains("is-open")) backdrop.hidden = true;
+      }, 340);
+      if (restoreFocus !== false) menuToggle.focus();
+    };
+
+    menuToggle.addEventListener("click", openMenu);
+
+    Array.prototype.forEach.call(document.querySelectorAll("[data-menu-close]"), function (el) {
+      el.addEventListener("click", function () { closeMenu(true); });
+    });
+
+    Array.prototype.forEach.call(sheet.querySelectorAll("a"), function (link) {
+      link.addEventListener("click", function () { closeMenu(false); });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (!sheet.classList.contains("is-open")) return;
+      if (e.key === "Escape") { closeMenu(true); return; }
+      if (e.key !== "Tab") return;
+      var items = sheet.querySelectorAll("button, a[href]");
+      if (!items.length) return;
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  }
+
+  /* ---------- 8. Footer year ---------- */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();
