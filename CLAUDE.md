@@ -14,10 +14,13 @@ Answer, then ask at most one question. Cut preamble, caveats, and background.
 
 ## Cache-busting (important)
 
-`index.html` links `styles.css?v=N` and `main.js?v=N`. Cloudflare Pages pins
-static assets to a 4-hour browser cache and ignores any `Cache-Control` set in
-`_headers`, so the query string is the only thing that forces browsers to pick
-up changes.
+`index.html` links `styles.css?v=N` and `main.js?v=N`, and `_headers` sets both
+to revalidate. Two layers, because unhashed asset names plus a CDN are easy to
+get wrong.
 
 **Bump `N` in both tags whenever styles.css or main.js changes.** Skipping this
-ships new HTML against a stale stylesheet, which looks like broken CSS.
+can ship new HTML against a stale stylesheet, which looks like broken CSS.
+
+When testing whether a cache header took effect, always append a throwaway query
+string (`?x=1`). Without it you are reading Cloudflare edge cache, not the new
+deploy, and will draw the wrong conclusion.

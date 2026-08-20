@@ -7,14 +7,22 @@
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
-# Hashed/static assets can be cached hard. Bump filenames when they change.
+# Images are stable, so cache them hard - but NOT "immutable" for a year. These
+# filenames are not content-hashed, and a request to a path before the file
+# exists gets its 404 cached under this same rule. A week is fast and
+# recoverable; a year means a broken asset stays broken until a manual purge.
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800
 
-# NOTE: Cloudflare Pages ignores Cache-Control set here for static assets - it
-# pins them to max-age=14400 regardless. Everything else in this file does
-# apply. Cache-busting for styles.css and main.js is done with a ?v= query
-# string on the tags in index.html instead - bump it whenever either changes.
+# styles.css and main.js are not content-hashed, so they must revalidate.
+# Without this they sit in the browser cache for hours and pair new HTML with a
+# stale stylesheet. index.html also appends a ?v= to both as a second line of
+# defence - bump it whenever either file changes.
+/styles.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/main.js
+  Cache-Control: public, max-age=0, must-revalidate
 
 # HTML should always revalidate so edits go live immediately.
 /
