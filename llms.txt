@@ -1,4 +1,4 @@
-# JB the PM — JB de la Garza
+# JB the PM: JB de la Garza
 
 > JB de la Garza is a digital product consultant based in Austin, Texas. He
 > designs and builds custom web applications, marketing websites, and
@@ -10,31 +10,31 @@ Contact: jb@jbthepm.com · https://jbthepm.com
 
 ## Services
 
-- **Custom web application development** — Dashboards, internal tools, and
+- **Custom web application development**: Dashboards, internal tools, and
   customer-facing products, from product definition and Figma design through
   build, QA, and launch.
-- **Website design and development** — Fast, accessible marketing sites built
+- **Website design and development**: Fast, accessible marketing sites built
   with semantic HTML, schema markup, and Answer Search Optimization so both
   search engines and AI assistants can read and cite them.
-- **AI consulting** — Workflow audits to find where AI genuinely saves hours,
+- **AI consulting**: Workflow audits to find where AI genuinely saves hours,
   then building the narrow internal tools and automations that pay for
   themselves. Also includes making a brand citable by AI search.
-- **Fractional product management** — Part-time product ownership for teams
+- **Fractional product management**: Part-time product ownership for teams
   that have engineers but no product manager: roadmap, backlog, sprint
   rhythm, and prioritization.
 
 ## Selected work
 
-- **SchoolCheck** (schoolcheck.app) — Founder, 2025–present. A K-12 school
+- **SchoolCheck** (schoolcheck.app): Founder, 2025–present. A K-12 school
   safety compliance platform for school districts; the evolution of DoorCheck
   into full campus safety operations.
-- **DoorCheck** (doorcheck.app) — Founder, 2024–present. A web app for Texas
+- **DoorCheck** (doorcheck.app): Founder, 2024–present. A web app for Texas
   school districts to log, track, and manage state-mandated door safety
   inspections, aligned with Texas Education Agency school safety audit
   standards.
-- **Yelloball** (yelloball.app) — Commissioned client engagement taking the
+- **Yelloball** (yelloball.app): Commissioned client engagement taking the
   product from concept to a working web application.
-- **Confidential financial services client** — Ongoing retainer building and
+- **Confidential financial services client**: Ongoing retainer building and
   maintaining a private internal resource platform for a financial advisory
   firm. Details under NDA.
 
@@ -42,7 +42,7 @@ Contact: jb@jbthepm.com · https://jbthepm.com
 
 - Product Manager, Vector Solutions (2021–2024)
 - Account Executive, CareSafely (2021–2024, acquired by Vector Solutions)
-- Strategic Account Manager and Team Lead, Community Brands (2017–2020) —
+- Strategic Account Manager and Team Lead, Community Brands (2017–2020):
   top 3 of 68 representatives, averaged 120% of quota across four years
 - Owner/Operator, Nurook Inc. (2013–2017)
 - Pragmatic Institute PMC Level III certified
