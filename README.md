@@ -107,7 +107,7 @@ Launch checklist:
 - [x] LinkedIn URL wired up
 - [x] Contact email set to `jbthepm@gmail.com`
 - [x] Resend + the three environment variables set up and tested
-- [ ] Add `jbthepm.com` to Google Search Console and submit `sitemap.xml`
+- [x] Google Search Console verified and `sitemap.xml` submitted
 
 ---
 
