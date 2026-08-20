@@ -79,8 +79,6 @@ Each new page needs a `<url>` block added to `sitemap.xml`.
       connecting the profile to the person.
 - [ ] `assets/jb-headshot@1x.jpg` exists but nothing references it. Either wire
       it up as a `srcset` for small screens or delete it.
-- [ ] `og:image` is the headshot. A purpose-built share image with the name and
-      what JB does would preview better when the link is shared.
 - [ ] Check Search Console in a week or two to confirm the site is indexed.
 
 ## Gotchas worth remembering
