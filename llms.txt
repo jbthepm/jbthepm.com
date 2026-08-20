@@ -34,7 +34,7 @@ Contact: jbthepm@gmail.com · https://jbthepm.com
   audit requirements.
 - **Yelloball** (yelloball.app): Commissioned client engagement taking the
   product from concept to a working web application.
-- **Financial services client**: Ongoing retainer building and
+- **Financial Platform**: Ongoing retainer building and
   maintaining a private internal resource platform for a financial advisory
   firm. Details under NDA.
 
