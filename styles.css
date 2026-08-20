@@ -197,12 +197,10 @@ main, .site-header, .site-footer { position: relative; z-index: 1; }
 
 .brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--ink); }
 .brand__mark {
-  display: grid; place-items: center; width: 34px; height: 34px;
-  border-radius: 11px; font-size: .78rem; font-weight: 700; letter-spacing: -.02em;
-  color: #fff; background: linear-gradient(150deg, #5350ea, var(--accent-ink));
-  box-shadow: var(--e2), inset 0 1px 0 rgba(255,255,255,.3);
+  display: grid; place-items: center; width: 28px; height: 28px;
+  color: #302FB1;
 }
-.brand__mark svg { width: 17px; height: 17px; }
+.brand__mark svg { width: 28px; height: 28px; }
 .brand__text { font-weight: 640; letter-spacing: -.02em; margin: 0; }
 
 .nav { display: flex; gap: 1.5rem; margin-left: auto; }
