@@ -25,16 +25,16 @@ Contact: jb@jbthepm.com · https://jbthepm.com
 
 ## Selected work
 
-- **SchoolCheck** (schoolcheck.app): Founder, 2025–present. A K-12 school
-  safety compliance platform for school districts; the evolution of DoorCheck
-  into full campus safety operations.
-- **DoorCheck** (doorcheck.app): Founder, 2024–present. A web app for Texas
-  school districts to log, track, and manage state-mandated door safety
-  inspections, aligned with Texas Education Agency school safety audit
-  standards.
+- **SchoolCheck** (schoolcheck.app): Founder, 2025–present. A K-12 campus
+  safety compliance platform for school districts. The evolution of DoorCheck,
+  covering safety inspections across all campus assets rather than doors alone.
+- **DoorCheck** (doorcheck.app): Founder, 2024–present. A web app for K-12
+  school districts to log, track, and manage door safety inspections. The
+  focused point solution that SchoolCheck grew out of, built around state door
+  audit requirements.
 - **Yelloball** (yelloball.app): Commissioned client engagement taking the
   product from concept to a working web application.
-- **Confidential financial services client**: Ongoing retainer building and
+- **Financial services client**: Ongoing retainer building and
   maintaining a private internal resource platform for a financial advisory
   firm. Details under NDA.
 
