@@ -14,9 +14,9 @@ Answer, then ask at most one question. Cut preamble, caveats, and background.
 
 ## Cache-busting (important)
 
-`index.html` links `styles.css?v=N` and `main.js?v=N`, and `_headers` sets both
-to revalidate. Two layers, because unhashed asset names plus a CDN are easy to
-get wrong.
+`index.html` links `styles.css?v=N` and `main.js?v=N`. Cloudflare Pages pins both
+files to a 4-hour browser cache and `_headers` cannot lower it, so the query
+string is the only thing that forces browsers to pick up changes.
 
 **Bump `N` in both tags whenever styles.css or main.js changes.** Skipping this
 can ship new HTML against a stale stylesheet, which looks like broken CSS.

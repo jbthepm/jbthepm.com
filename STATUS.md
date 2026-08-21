@@ -41,9 +41,9 @@ The site is launched and serving real traffic.
 - DoorCheck reframed as a national point solution, not Texas-only.
 - Skill pills rebuilt as a set of 10, synced into the `knowsAbout` schema.
 - Lucide icons on the four service cards.
-- Cache handling reworked: `styles.css` and `main.js` revalidate via `_headers`
-  and carry a `?v=` query string, and `/assets/*` dropped from a one-year
-  `immutable` cache to a week.
+- Cache handling reworked: `styles.css` and `main.js` carry a `?v=` query string,
+  and `/assets/*` dropped from a one-year `immutable` cache to a week after a
+  cached 404 broke the share card.
 
 ## To do
 
@@ -82,9 +82,11 @@ Each new page needs a `<url>` block added to `sitemap.xml`.
 
 ## Gotchas worth remembering
 
-- **Cache** - `styles.css` and `main.js` are not content-hashed. `_headers` makes
-  them revalidate and `index.html` appends `?v=N`; bump that whenever either
-  file changes. If a change looks like it did not deploy, hard refresh
+- **Cache** - `styles.css` and `main.js` are pinned by Pages to a 4-hour browser
+  cache; `_headers` cannot lower it (tested: directory wildcards like
+  `/assets/*` are honoured, exact paths and extension globs are not). The `?v=N`
+  query string in `index.html` is what actually busts it - bump it whenever
+  either file changes. If a change looks like it did not deploy, hard refresh
   (Ctrl+Shift+R) before assuming the code is wrong.
 - **Cached 404s** - `/assets/*` had a one-year `immutable` cache, so a request
   to an asset path *before* the file was deployed cached the 404 for a year.

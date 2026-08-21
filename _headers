@@ -14,15 +14,11 @@
 /assets/*
   Cache-Control: public, max-age=604800
 
-# styles.css and main.js are not content-hashed, so they must revalidate.
-# Without this they sit in the browser cache for hours and pair new HTML with a
-# stale stylesheet. index.html also appends a ?v= to both as a second line of
-# defence - bump it whenever either file changes.
-/*.css
-  Cache-Control: public, max-age=0, must-revalidate
-
-/*.js
-  Cache-Control: public, max-age=0, must-revalidate
+# NOTE on styles.css / main.js: Pages pins them to max-age=14400 and will not
+# let this file lower it. Tested and confirmed: a directory wildcard like
+# /assets/* is honoured, but an exact path (/styles.css) and an extension glob
+# (/*.css) are both ignored. Cache-busting is therefore done with the ?v=N query
+# string on the tags in index.html - bump it whenever either file changes.
 
 # HTML should always revalidate so edits go live immediately.
 /
