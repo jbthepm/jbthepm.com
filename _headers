@@ -18,10 +18,10 @@
 # Without this they sit in the browser cache for hours and pair new HTML with a
 # stale stylesheet. index.html also appends a ?v= to both as a second line of
 # defence - bump it whenever either file changes.
-/styles.css
+/*.css
   Cache-Control: public, max-age=0, must-revalidate
 
-/main.js
+/*.js
   Cache-Control: public, max-age=0, must-revalidate
 
 # HTML should always revalidate so edits go live immediately.
